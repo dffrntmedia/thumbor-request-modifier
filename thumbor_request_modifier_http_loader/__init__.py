@@ -1,0 +1,1 @@
+from thumbor_request_modifier_http_loader import loader
