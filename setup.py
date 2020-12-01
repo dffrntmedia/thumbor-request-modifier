@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
   name = 'thumbor-request-modifier-http-loader',
-  packages = ['thumbor-request-modifier-http-loader'],   # Chose the same as "name"
+  packages = ['thumbor_request_modifier_http_loader'],
   version = '0.1',
   license='GPL-3.0',
   description = 'Custom HTTP loader for Thumbor which allows modifying client request based on certain conditions.',
@@ -16,10 +16,13 @@ setup(
     'tornado'
   ],
   classifiers=[
-    'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+    'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
-    'Topic :: Software Development',
-    'License :: GPL-3.0 License',
-    'Programming Language :: Python :: 2'
+    'Topic :: Software Development :: Libraries',
+    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    'Programming Language :: Python :: 2',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8'
   ],
 )
