@@ -5,11 +5,11 @@ setup(
   packages = ['thumbor-request-modifier-http-loader'],   # Chose the same as "name"
   version = '0.1',
   license='GPL-3.0',
-  description = 'Custom HTTP loader for Thumbor which allows to modify client request based on certain conditions.',
+  description = 'Custom HTTP loader for Thumbor which allows modifying client request based on certain conditions.',
   author = 'Maksim Barouski',
   author_email = 'maksim.borovskij@yandex.ru',
   url = 'https://github.com/dffrntmedia/thumbor-request-modifier-http-loader',
-  download_url = 'https://github.com/dffrntmedia/thumbor-request-modifier-http-loader',
+  download_url = 'https://github.com/dffrntmedia/thumbor-request-modifier-http-loader/archive/0.1-beta.tar.gz',
   keywords = ['thumbor'],
   install_requires=[
     'thumbor',

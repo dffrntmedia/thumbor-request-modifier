@@ -2,7 +2,7 @@
 
 ## What is it?
 
-Custom HTTP loader for Thumbor which allows to modify client request based on certain conditions.
+Custom HTTP loader for Thumbor which allows modifying client request based on certain conditions.
 
 ---
 
