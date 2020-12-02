@@ -34,10 +34,10 @@ Set configurations in Thumbor. For example, we have to inject Authorization head
 ```sh
 LOADER="'thumbor_request_modifier_http_loader.loader'"
 
-REQUEST_MODIFIER_HTTP_LOADER_MODIFICATIONS="['mod_type', 'set_header', 'mod_header_name', 'Authorization', 'mod_header_value', 'AccessToken', 'cond_type', 'url_contains', 'cond_url_part', 'image.api.com']"
+REQUEST_MODIFIER_HTTP_LOADER_MODIFICATIONS="[['mod_type', 'set_header', 'mod_header_name', 'Authorization', 'mod_header_value', 'AccessToken', 'cond_type', 'url_contains', 'cond_url_part', 'protected.image.api.com']]"
 
 # If you set custom headers in request then you have to allow their forwarding with:
-HTTP_LOADER_FORWARD_ALL_HEADERS="True"
+HTTP_LOADER_FORWARD_ALL_HEADERS="True" # It's a bad way because you can pass sensetive data to third services
 # or
 HTTP_LOADER_FORWARD_HEADERS_WHITELIST="['Authorization']"
 ```
