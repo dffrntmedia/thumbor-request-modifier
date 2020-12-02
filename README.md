@@ -57,3 +57,7 @@ Version in development must have format:
 ```
 <MAJOR_VERSION_NUMBER>.<MINOR_VERSION_NUMBER>.<BUILD_NUMBER>-dev
 ```
+
+## It's open for contributions
+
+Just add new modification type and/or condition type.
