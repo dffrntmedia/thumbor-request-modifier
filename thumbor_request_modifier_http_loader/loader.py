@@ -40,6 +40,7 @@ def _modify_request(context, url):
         if condition_handler(context, url, modification_params):
             modification_handler = modification_handlers[modification_params['mod_type']]
             modification_handler(context, url, modification_params)
+    logger.debug(u"Request headers after modification: %s", str(context.request_handler.request.headers))
 
 
 @return_future
