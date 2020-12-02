@@ -8,6 +8,7 @@ from thumbor.utils import logger
 
 
 def _url_contains(context, url, params):
+    logger.debug(u"Checking if URL \"%s\" contains \"%s\"", url, params['cond_url_part'])
     return params['cond_url_part'] in url
 
 
@@ -17,6 +18,7 @@ condition_handlers = {
 
 
 def _set_header(context, url, params):
+    logger.debug(u"Setting header \"%s\": \"%s\"", params['mod_header_name'], params['mod_header_value'])
     context.request_handler.request.headers[params['mod_header_name']] = params['mod_header_value']
 
 
@@ -33,7 +35,7 @@ def _modify_request(context, url):
                 [modification[i] for i in range(1, len(modification), 2)],
             )
         }
-        logger.warning(u"Applying modification with params: %s", str(modification_params))
+        logger.debug(u"Applying modification with params: %s", str(modification_params))
         condition_handler = condition_handlers[modification_params['cond_type']]
         if condition_handler(context, url, modification_params):
             modification_handler = modification_handlers[modification_params['mod_type']]
