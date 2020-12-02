@@ -4,6 +4,7 @@
 
 from thumbor.loaders import http_loader
 from tornado.concurrent import return_future
+from thumbor.utils import logger
 
 
 def _url_contains(context, url, params):
@@ -32,6 +33,7 @@ def _modify_request(context, url):
                 [modification[i] for i in range(1, len(modification), 2)],
             )
         }
+        logger.info(u"INFO Applying modification with params: %s", str(modification_params))
         condition_handler = condition_handlers[modification_params['cond_type']]
         if condition_handler(context, url, modification_params):
             modification_handler = modification_handlers[modification_params['mod_type']]
