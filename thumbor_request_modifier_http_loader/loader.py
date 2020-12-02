@@ -43,4 +43,4 @@ def _modify_request(context, url):
 @return_future
 def load(context, url, callback):
     _modify_request(context, url)
-    return http_loader.load_sync(context, url, callback, normalize_url=http_loader._normalize_url)
+    return http_loader.load_sync(context, url, callback, normalize_url_func=http_loader._normalize_url)

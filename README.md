@@ -41,3 +41,19 @@ HTTP_LOADER_FORWARD_ALL_HEADERS="True"
 # or
 HTTP_LOADER_FORWARD_HEADERS_WHITELIST="['Authorization']"
 ```
+
+## Deploy flow
+
+1. Commit with new version in `setup.py`;
+2. `make tag -e VERSION=<VERSION>`;
+3) `make deploy`.
+
+Stable version must have format:
+```
+<MAJOR_VERSION_NUMBER>.<MINOR_VERSION_NUMBER>
+```
+
+Version in development must have format:
+```
+<MAJOR_VERSION_NUMBER>.<MINOR_VERSION_NUMBER>.<BUILD_NUMBER>-dev
+```
