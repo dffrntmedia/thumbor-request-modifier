@@ -12,7 +12,7 @@ tag:
 ifndef VERSION
 	$(error Provide VERSION as env var)
 endif
-	@git tag -a "$$(VERSION)" -m "$$(VERSION)"
+	@git tag -a "${VERSION}" -m "${VERSION}"
 	 git push origin --tags
 
 .PHONY: help
