@@ -6,6 +6,15 @@ deploy:
 	 python setup.py sdist
 	 twine upload dist/*
 
+.PHONY: tag
+## tag: tags current state
+tag:
+ifndef VERSION
+	$(error Provide VERSION as env var)
+endif
+	@git tag -a "$$(VERSION)" -m "$$(VERSION)"
+	 git push origin --tags
+
 .PHONY: help
 ## help: prints help message
 help:
