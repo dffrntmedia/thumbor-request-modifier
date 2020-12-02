@@ -25,4 +25,19 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Configuration
 
-TODO
+Install:
+```
+pip install thumbor-request-modifier-http-loader # or any other version
+```
+
+Set configurations in Thumbor. For example, we have to inject Authorization header when requested image is from protected API.
+```sh
+LOADER="'thumbor_request_modifier_http_loader.loader'"
+
+REQUEST_MODIFIER_HTTP_LOADER_MODIFICATIONS="['mod_type', 'set_header', 'mod_header_name', 'Authorization', 'mod_header_value', 'AccessToken', 'cond_type', 'url_contains', 'cond_url_part', 'image.api.com']"
+
+# If you set custom headers in request then you have to allow their forwarding with:
+HTTP_LOADER_FORWARD_ALL_HEADERS="True"
+# or
+HTTP_LOADER_FORWARD_HEADERS_WHITELIST="['Authorization']"
+```

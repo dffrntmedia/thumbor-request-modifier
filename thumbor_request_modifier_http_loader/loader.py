@@ -7,8 +7,7 @@ from tornado.concurrent import return_future
 
 
 def _url_contains(context, url, params):
-    [value] = params
-    return value in url
+    return params['cond_url_part'] in url
 
 
 condition_handlers = {
@@ -17,8 +16,7 @@ condition_handlers = {
 
 
 def _set_header(context, url, params):
-    [name, value] = params
-    context.request_handler.request.headers[name] = value
+    context.request_handler.request.headers[params['mod_header_name']] = params['mod_header_value']
 
 
 modification_handlers = {
@@ -28,14 +26,19 @@ modification_handlers = {
 
 def _modify_request(context, url):
     for modification in context.config.REQUEST_MODIFIER_HTTP_LOADER_MODIFICATIONS:
-        [modification_type, modification_params, condition_type, condition_params] = modification
-        condition_handler = condition_handlers[condition_type]
-        if condition_handler(context, url, condition_params):
-            modification_handler = modification_handlers[modification_type]
+        modification_params = {
+            key: value for (key, value) in zip(
+                [modification[i] for i in range(0, len(modification), 2)],
+                [modification[i] for i in range(1, len(modification), 2)],
+            )
+        }
+        condition_handler = condition_handlers[modification_params['cond_type']]
+        if condition_handler(context, url, modification_params):
+            modification_handler = modification_handlers[modification_params['mod_type']]
             modification_handler(context, url, modification_params)
 
 
 @return_future
 def load(context, url, callback):
     _modify_request(context, url)
-    return http_loader.load_sync(context, url, callback, normalize_url_func=_normalize_url)
+    return http_loader.load_sync(context, url, callback)
