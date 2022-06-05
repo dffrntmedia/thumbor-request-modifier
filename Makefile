@@ -18,7 +18,6 @@ endif
 	 git push origin --tags
 
 ## help: display this message
-.PHONY: help
 help:
 	@echo "thumbor-request-modifier"
 	@echo
