@@ -1,4 +1,7 @@
-.PHONY: deploy
+## setup: install package locally
+setup:
+	@pip install .
+
 ## deploy: deploys to PyPi
 deploy:
 	@rm -rf dist
@@ -6,7 +9,6 @@ deploy:
 	 python setup.py sdist
 	 twine upload dist/*
 
-.PHONY: tag
 ## tag: tags current state
 tag:
 ifndef VERSION
@@ -15,10 +17,10 @@ endif
 	@git tag -a "${VERSION}" -m "${VERSION}"
 	 git push origin --tags
 
+## help: display this message
 .PHONY: help
-## help: prints help message
 help:
-	@echo "thumbor-request-modifier-http-loader"
+	@echo "thumbor-request-modifier"
 	@echo
 	@echo "Usage:"
 	@echo

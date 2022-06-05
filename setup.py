@@ -1,26 +1,22 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
-  name = 'thumbor-request-modifier-http-loader',
-  packages = ['thumbor_request_modifier_http_loader'],
-  version = '1.0',
-  license='GPL-3.0',
-  description = 'Custom HTTP loader for Thumbor which allows modifying client request based on certain conditions.',
-  author = 'Maksim Barouski',
-  author_email = 'maksim.borovskij@yandex.ru',
-  url = 'https://github.com/dffrntmedia/thumbor-request-modifier-http-loader',
-  download_url = 'https://github.com/dffrntmedia/thumbor-request-modifier-http-loader/archive/1.0.tar.gz',
-  keywords = ['thumbor'],
-  install_requires=[
-    'thumbor',
-    'tornado'
-  ],
-  classifiers=[
-    'Development Status :: 3 - Alpha',
-    'Intended Audience :: Developers',
-    'Topic :: Software Development :: Libraries',
-    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    'Programming Language :: Python :: 2',
-    'Programming Language :: Python :: 2.7'
-  ],
+    name="thumbor_request_modifier",
+    version="2.0",
+    author="DFFRNT Lab",
+    description=("Thumbor HTTP loader which allows modifying the client request based on certain conditions."),
+    license="GPLv3",
+    keywords=['thumbor', 'request modifier'],
+    url="https://github.com/dffrntmedia/thumbor-request-modifier",
+    packages = ['thumbor_request_modifier'],
+    install_requires=[
+        "thumbor==7.*,>=7.0.6",
+        "tornado==6.*,>=6.0.3"
+    ],
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Programming Language :: Python :: 3",
+    ],
 )
