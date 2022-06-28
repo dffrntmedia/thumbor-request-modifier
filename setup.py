@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="thumbor_request_modifier",
-    version="2.0.1-dev",
+    version="2.0.2-dev",
     author="DFFRNT Lab",
     description=("Thumbor HTTP loader which allows modifying the client request based on certain conditions."),
     license="GPLv3",

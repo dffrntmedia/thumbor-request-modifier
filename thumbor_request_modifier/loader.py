@@ -39,4 +39,4 @@ def _modify_request(context, url):
 
 async def load(context, url):
     _modify_request(context, url)
-    await http_loader.load(context, url)
+    return await http_loader.load(context, url)
