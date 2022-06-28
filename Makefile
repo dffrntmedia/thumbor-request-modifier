@@ -1,4 +1,4 @@
-## setup: install package locally
+## setup: installs package locally
 setup:
 	@pip install .
 
@@ -17,7 +17,7 @@ endif
 	@git tag -a "${VERSION}" -m "${VERSION}"
 	 git push origin --tags
 
-## help: display this message
+## help: displays this message
 help:
 	@echo "thumbor-request-modifier"
 	@echo
