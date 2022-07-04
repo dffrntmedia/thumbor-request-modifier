@@ -5,7 +5,7 @@ setup:
 ## deploy: deploys to PyPi
 deploy:
 	@rm -rf dist
-	 rm MANIFEST
+	 rm -f MANIFEST
 	 python setup.py sdist
 	 twine upload dist/*
 
