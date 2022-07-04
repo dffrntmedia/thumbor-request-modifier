@@ -34,7 +34,7 @@ HTTP_LOADER_FORWARD_HEADERS_WHITELIST = "['Authorization']"
 Stable version format:
 
 ```
-<MAJOR_VERSION_NUMBER>.<MINOR_VERSION_NUMBER>
+<MAJOR_VERSION_NUMBER>.<MINOR_VERSION_NUMBER>.<PATCH_NUMBER>
 ```
 
 Version in development format:
